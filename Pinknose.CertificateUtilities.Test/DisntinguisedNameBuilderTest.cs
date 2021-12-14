@@ -32,9 +32,19 @@ namespace Pinknose.CertificateUtilities.Test
     {
         #region Fields
 
-        private static readonly string cn = "TESTCN";
-        private static readonly string o = "TESTO";
-        private static readonly string expectedDN = $"CN={cn}, O={o}";
+        private static readonly string title = "Mr.";
+        private static readonly string cn = "John Doe";
+        private static readonly string organization = "Bizco";
+        private static readonly string email1 = "test@test.com";
+        private static readonly string email2 = "test2@test.com";
+        private static readonly string dc1 = "com";
+        private static readonly string dc2 = "test";
+        private static readonly string ou = "users";
+        private static readonly string street = "123 Main St.";
+        private static readonly string locality = "Anytown";
+        private static readonly string state = "FL";
+        private static readonly string country = "USA";
+        private static readonly string expectedDN = $"DC={dc1}, DC={dc2}, OU={ou}, CN={cn}, T={title}, E={email1}, E={email2}, O={organization}, STREET={street}, L={locality}, S={state}, C={country}";
 
         #endregion Fields
 
@@ -44,7 +54,18 @@ namespace Pinknose.CertificateUtilities.Test
         public void BuildTest()
         {
             var dnBuilder = new DistinguishedNameBuilder(cn)
-                .AddOrganization(o);
+                .AddOrganization(organization)
+                .AddEmailAddress(email1)
+                .AddEmailAddress(email2)
+                .AddDomainComponent(dc1)
+                    .AddDomainComponent(dc2)
+                        .AddOrganizationalUnit(ou)
+                            .EndOrganizationChain()
+                .AddStreet(street)
+                .AddState(state)
+                .AddLocality(locality)
+                .AddCountry(country)
+                .AddTitle(title);
 
             //TODO: Finish this test
 
