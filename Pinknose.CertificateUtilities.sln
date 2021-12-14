@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pinknose.CertificateUtilities", "Pinknose.CertificateUtilities\Pinknose.CertificateUtilities.csproj", "{01BA6D89-4885-4325-9D65-4A61DD935C5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pinknose.CertificateUtilities.Test", "Pinknose.CertificateUtilities.Test\Pinknose.CertificateUtilities.Test.csproj", "{6530F3A8-F419-425B-AD0B-D2254139B53E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{01BA6D89-4885-4325-9D65-4A61DD935C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01BA6D89-4885-4325-9D65-4A61DD935C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01BA6D89-4885-4325-9D65-4A61DD935C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6530F3A8-F419-425B-AD0B-D2254139B53E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6530F3A8-F419-425B-AD0B-D2254139B53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6530F3A8-F419-425B-AD0B-D2254139B53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6530F3A8-F419-425B-AD0B-D2254139B53E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

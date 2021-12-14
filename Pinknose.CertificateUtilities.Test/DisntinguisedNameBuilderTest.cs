@@ -1,4 +1,4 @@
-﻿//================================================================================
+//================================================================================
 //
 // MIT License
 //
@@ -23,22 +23,36 @@
 // SOFTWARE.
 //
 //================================================================================
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Pinknose.CertificateUtilities
+namespace Pinknose.CertificateUtilities.Test
 {
-    public class UnsupportedOrganizationalChainingException : Exception
+    [TestClass]
+    public class DisntinguisedNameBuilderTest
     {
-        #region Constructors
+        #region Fields
 
-        public UnsupportedOrganizationalChainingException(string? message) : base(message)
+        private static readonly string cn = "TESTCN";
+        private static readonly string o = "TESTO";
+        private static readonly string expectedDN = $"CN={cn}, O={o}";
+
+        #endregion Fields
+
+        #region Methods
+
+        [TestMethod]
+        public void BuildTest()
         {
+            var dnBuilder = new DistinguishedNameBuilder(cn)
+                .AddOrganization(o);
+
+            //TODO: Finish this test
+
+            var dn = dnBuilder.Build();
+
+            Assert.AreEqual(dn.Name, expectedDN);
         }
 
-        #endregion Constructors
+        #endregion Methods
     }
 }
